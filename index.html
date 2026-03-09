@@ -6,11 +6,10 @@
 
 <title>Apartmán La Mata</title>
 
-<!-- OG meta tagy pre zdieľanie -->
-<meta property="og:title" content="Apartmán La Mata">
-<meta property="og:description" content="2-spálňový prízemný apartmán s balkónom pre 4 osoby v La Mata – Cabo Cervera. Bazén, balkón, plne vybavený.">
+<!-- Open Graph pre WhatsApp/Facebook -->
+<meta property="og:title" content="Apartmán La Mata – Cabo Cervera">
+<meta property="og:description" content="2-spálňový prízemný apartmán s balkónom pre 4 osoby, 600 m od pieskovej pláže La Mata. Bazén, WiFi, parkovanie.">
 <meta property="og:image" content="https://tvoj-username.github.io/apartman-lamata/og-image.jpg">
-<meta property="og:url" content="https://tvoj-username.github.io/apartman-lamata/">
 <meta property="og:type" content="website">
 
 <style>
@@ -36,7 +35,6 @@ header{
   padding:20px;
 }
 
-/* TITULNÁ FOTKA */
 .cover {
   position: relative;
   text-align: center;
@@ -57,16 +55,25 @@ header{
   left: 50%;
   transform: translate(-50%, -50%);
   background: rgba(0,0,0,0.5);
-  padding: 15px 25px;
+  padding: 10px 20px;
   border-radius: 10px;
-  font-size: 24px;
+  font-size: 22px;
   font-weight: bold;
-  line-height:1.3;
-  color:white;
-  text-align:center;
+  line-height: 1.2;
+  color: white;
+  text-align: center;
+  white-space: nowrap;
 }
 
-/* GALÉRIA */
+@media (max-width: 768px) {
+  .cover-text{
+    font-size: 18px;
+    padding: 8px 12px;
+    white-space: normal;
+    line-height: 1.1;
+  }
+}
+
 .slider{
   position:relative;
   text-align:center;
@@ -79,7 +86,8 @@ header{
   border-radius:10px;
   object-fit: contain;
   opacity:1;
-  transition: opacity 0.5s ease-in-out; /* fade efekt */
+  transition: opacity 0.5s ease-in-out;
+  cursor: pointer;
 }
 
 .arrow{
@@ -136,6 +144,10 @@ header{
 .contact{
   margin-top:30px;
   text-align:center;
+  display:flex;
+  justify-content:center;
+  gap:15px;
+  flex-wrap: wrap;
 }
 
 .button{
@@ -144,12 +156,17 @@ header{
   font-size:16px;
   border-radius:8px;
   display:inline-block;
-  margin:5px;
   color:white;
+  min-width:160px;
+  text-align:center;
 }
 
 .email{
   background:#1e6c8f;
+}
+
+.whatsapp{
+  background:#25D366;
 }
 
 footer{
@@ -163,12 +180,38 @@ footer{
   margin-top:30px;
 }
 
-/* RESPONSÍVNE ÚPRAVY */
+#lightbox {
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background: rgba(0,0,0,0.8);
+  display: none;
+  justify-content: center;
+  align-items: center;
+}
+
+#lightbox img {
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: 10px;
+  box-shadow: 0 0 15px black;
+}
+
+#close {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  color: white;
+  font-size: 35px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
 @media (max-width: 768px) {
-  .cover-text{
-    font-size: 20px;
-    padding: 10px 15px;
-  }
   .slider img{
     max-height:50vh;
   }
@@ -187,6 +230,9 @@ footer{
     font-size:15px;
     padding:10px 18px;
   }
+  .contact{
+    gap:10px;
+  }
 }
 </style>
 </head>
@@ -194,80 +240,57 @@ footer{
 <body>
 
 <header>
-Apartmán La Mata
+Apartmán La Mata – Cabo Cervera
 </header>
 
 <div class="container">
 
-<!-- TITULNÁ FOTKA -->
 <div class="cover">
-  <img id="cover-img" src="foto1.jpg" alt="Apartmán La Mata">
-  <div class="cover-text">
-    Apartmán La Mata – 2 spálne • Balkón • 4 osoby
-  </div>
+<img src="foto1.jpg" alt="Apartmán La Mata">
+<div class="cover-text">
+Apartmán La Mata – Cabo Cervera<br>
+<span>60 m² • 600 m od pieskovej pláže • Bazén • Balkón • 4 osoby</span>
+</div>
 </div>
 
-<!-- GALÉRIA -->
 <div class="slider">
-  <button class="arrow left" onclick="minus()">❮</button>
-  <img id="foto" src="foto5.jpg">
-  <button class="arrow right" onclick="plus()">❯</button>
+<button class="arrow left" onclick="minus()">❮</button>
+<img id="foto" src="foto5.jpg">
+<button class="arrow right" onclick="plus()">❯</button>
 </div>
 
 <div class="thumbs">
-<script>
-let fotky = []
-for(let i=1;i<=22;i++){ 
-  fotky.push(`foto${i}.jpg`) 
-  document.write(`<img src="foto${i}.jpg" onclick="show(${i-1})">`)
-}
-
-let index = 4
-let slider = document.getElementById("foto")
-let coverImg = document.getElementById("cover-img")
-
-function zobraz(){
-  slider.style.opacity = 0; 
-  setTimeout(()=> {
-    slider.src = fotky[index];
-    slider.style.opacity = 1; 
-  }, 200);
-}
-
-function plus(){
-  index++
-  if(index >= fotky.length){ index = 0 }
-  slider.src = fotky[index]
-  coverImg.src = fotky[index]
-  zobraz()
-}
-
-function minus(){
-  index--
-  if(index < 0){ index = fotky.length-1 }
-  slider.src = fotky[index]
-  coverImg.src = fotky[index]
-  zobraz()
-}
-
-function show(i){
-  index = i
-  slider.src = fotky[index]
-  coverImg.src = fotky[index]
-  zobraz()
-}
-</script>
 </div>
 
-<!-- PODROBNÝ POPIS POD SLIDEROM -->
+<!-- Lightbox modal -->
+<div id="lightbox">
+  <span id="close">&times;</span>
+  <img id="lightbox-img" src="">
+</div>
+
 <div class="info">
-<p>2-spálňový prízemný apartmán s balkónom pre 4 osoby.</p>
-<p>Apartmán sa nachádza v obľúbenej časti <b>La Mata – Cabo Cervera</b> v urbanizácií <b>Los Leandros</b> pri meste <b>Torrevieja</b> v Španielsku.</p>
-<p>Balkón ponúka príjemné posedenie a čiastočný výhľad na more. V areáli sa nachádza bazén. Bezproblémové parkovanie pri apartmáne.</p>
-<p>K moru je to <b>450 m</b>. Na pieskovú pláž <b>La Mata 600 m</b> (cca 8 minút pešo). Pláž má pozvoľný vstup do mora a je vhodná pre rodiny s deťmi.</p>
-<p>V okolí sa nachádza park <b>Torre del Moro</b> a <b>Parque del Molino de Agua</b>, ideálne na prechádzky a relax. V pešej dostupnosti sú reštaurácie a kaviarne, nákupné centrum <b>Mercadona</b> a <b>Aldi</b>.</p>
+
+<b>2-spálňový prízemný apartmán s balkónom pre 4 osoby</b>
+
+<p>Apartmán sa nachádza v obľúbenej časti La Mata – Cabo Cervera v urbanizácií Los Leandros pri meste Torrevieja v Španielsku.</p>
+
+<p>Balkón ponúka príjemné posedenie a čiastočný výhľad na more.  
+V areáli sa nachádza bazén.  
+Bezproblémové parkovanie pri apartmáne.</p>
+
+<p>K moru je to <b>450 m</b>.  
+Na pieskovú pláž <b>La Mata 600 m</b> (cca 8 minút pešo).  
+Pláž má pozvoľný vstup do mora a je vhodná pre rodiny s deťmi.</p>
+
+<p>V okolí sa nachádza park <b>Torre del Moro</b> a <b>Parque del Molino de Agua</b> ideálne na prechádzky a relax.</p>
+
 <p>Apartmán je plne vybavený: chladnička, práčka, rúra, mikrovlnka, varná konvica, toustovač, vysávač, televízor, sporák, fén, rádio a plne zariadená kuchyňa. V izbách sú vstavané šatníky.</p>
+
 <p>K dispozícii je <b>optický internet a internetová televízia</b>, dve klimatizačné jednotky s funkciou kúrenia.</p>
+
+<p>V pešej dostupnosti sú reštaurácie, kaviarne, nákupné centrum, <b>Mercadona</b> a <b>Aldi</b>.</p>
+
+<p>Letisko Alicante je vzdialené <b>40 km (38 minút autom)</b>.</p>
 
 <div class="price">
 <b>Cenník:</b>
@@ -278,18 +301,32 @@ function show(i){
 <li>September – Október: 80 € / noc</li>
 </ul>
 
+Cena je za noc za celý apartmán.
+
+<br><br>
+
 Minimálny prenájom: <b>12 nocí</b>.
 
 <br><br>
 
-Dlhodobý prenájom: 700 € / mesiac + elektrina a voda (mesiace september–máj)
+Dlhodobý prenájom (september – máj):  
+<b>700 € / mesiac + elektrina a voda</b>
 </div>
 
 <div class="contact">
-<a class="button email" href="mailto:peter.petrovsky699@gmail.com">Email rezervácia</a>
+
+<a class="button email" href="mailto:peter.petrovsky699@gmail.com">
+Email rezervácia
+</a>
+
+<a class="button whatsapp" href="https://wa.me/421907221384?text=Dobrý%20deň,%20mám%20záujem%20o%20prenájom%20apartmánu%20La%20Mata">
+WhatsApp rezervácia
+</a>
+
 </div>
 
 <div class="map">
+
 <h3>Poloha apartmánu</h3>
 
 <iframe
@@ -303,7 +340,8 @@ src="https://maps.google.com/maps?q=38.00377232820643,-0.6534666588060377&z=17&o
 
 <br><br>
 
-<a class="button email" href="https://www.google.com/maps/dir/?api=1&destination=38.00377232820643,-0.6534666588060377">
+<a class="button whatsapp"
+href="https://www.google.com/maps/dir/?api=1&destination=38.00377232820643,-0.6534666588060377">
 Navigovať k apartmánu
 </a>
 
@@ -314,6 +352,70 @@ Navigovať k apartmánu
 <footer>
 Apartmán La Mata
 </footer>
+
+<script>
+let fotky=[]
+for(let i=1;i<=22;i++){ fotky.push(`foto${i}.jpg`) }
+
+let index=4
+let slider=document.getElementById("foto")
+const thumbsContainer = document.querySelector('.thumbs')
+
+// Slider funkcia
+function zobraz(){
+  slider.style.opacity=0
+  setTimeout(()=>{
+    slider.src=fotky[index]
+    slider.style.opacity=1
+  },200)
+}
+
+function plus(){
+index++
+if(index>=fotky.length){index=0}
+zobraz()
+}
+
+function minus(){
+index--
+if(index<0){index=fotky.length-1}
+zobraz()
+}
+
+// Dynamicky vytvorenie miniatur
+for(let i=1;i<=22;i++){
+  const thumb = document.createElement('img');
+  thumb.src = `foto${i}.jpg`;
+  thumb.alt = `Foto ${i}`;
+  thumb.onclick = function(){
+    index = i-1;
+    zobraz();
+    setTimeout(()=>{
+      lightbox.style.display = "flex";
+      lightboxImg.src = fotky[index];
+    },210);
+  };
+  thumbsContainer.appendChild(thumb);
+}
+
+// Lightbox
+const lightbox = document.getElementById("lightbox");
+const lightboxImg = document.getElementById("lightbox-img");
+const closeBtn = document.getElementById("close");
+
+slider.onclick = function() {
+  lightbox.style.display = "flex";
+  lightboxImg.src = slider.src;
+}
+
+closeBtn.onclick = function() {
+  lightbox.style.display = "none";
+}
+
+lightbox.onclick = function(e) {
+  if(e.target === lightbox) lightbox.style.display = "none";
+}
+</script>
 
 </body>
 </html>
