@@ -55,13 +55,23 @@ header{
   left: 50%;
   transform: translate(-50%, -50%);
   background: rgba(0,0,0,0.5);
-  padding: 15px 25px;
+  padding: 10px 20px;
   border-radius: 10px;
-  font-size: 24px;
+  font-size: 22px;       
   font-weight: bold;
-  line-height:1.3;
-  color:white;
-  text-align:center;
+  line-height: 1.2;      
+  color: white;
+  text-align: center;
+  white-space: nowrap;    
+}
+
+@media (max-width: 768px) {
+  .cover-text{
+    font-size: 18px;       
+    padding: 8px 12px;
+    white-space: normal;   
+    line-height: 1.1;
+  }
 }
 
 .slider{
@@ -135,7 +145,7 @@ header{
   text-align:center;
   display:flex;
   justify-content:center;
-  gap:15px; /* medzera medzi tlačidlami */
+  gap:15px; 
   flex-wrap: wrap;
 }
 
@@ -146,7 +156,7 @@ header{
   border-radius:8px;
   display:inline-block;
   color:white;
-  min-width:160px; /* rovnaká šírka tlačidiel */
+  min-width:160px; 
   text-align:center;
 }
 
@@ -170,10 +180,6 @@ footer{
 }
 
 @media (max-width: 768px) {
-  .cover-text{
-    font-size: 20px;
-    padding: 10px 15px;
-  }
   .slider img{
     max-height:50vh;
   }
@@ -211,7 +217,7 @@ Apartmán La Mata – Cabo Cervera
 <img src="foto1.jpg" alt="Apartmán La Mata">
 <div class="cover-text">
 Apartmán La Mata – Cabo Cervera<br>
-60 m² • 600 m od pieskovej pláže • Bazén • Balkón • 4 osoby
+<span>60 m² • 600 m od pieskovej pláže • Bazén • Balkón • 4 osoby</span>
 </div>
 </div>
 
