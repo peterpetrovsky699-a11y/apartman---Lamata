@@ -6,10 +6,10 @@
 
 <title>Apartmán La Mata</title>
 
-<!-- Open Graph meta pre WhatsApp / Facebook -->
+<!-- Open Graph pre WhatsApp/Facebook -->
 <meta property="og:title" content="Apartmán La Mata – Cabo Cervera">
 <meta property="og:description" content="2-spálňový prízemný apartmán s balkónom pre 4 osoby, 600 m od pieskovej pláže La Mata. Bazén, WiFi, parkovanie.">
-<meta property="og:image" content="https://tvoj-username.github.io/apartman-lamata/og-image.jpg?v=2">
+<meta property="og:image" content="https://tvoj-username.github.io/apartman-lamata/og-image.jpg">
 <meta property="og:type" content="website">
 
 <style>
@@ -87,6 +87,7 @@ header{
   object-fit: contain;
   opacity:1;
   transition: opacity 0.5s ease-in-out;
+  cursor: pointer; /* kliknutie pre zväčšenie */
 }
 
 .arrow{
@@ -179,6 +180,38 @@ footer{
   margin-top:30px;
 }
 
+/* Lightbox pre zväčšenie */
+#lightbox {
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background: rgba(0,0,0,0.8);
+  display: none;
+  justify-content: center;
+  align-items: center;
+}
+
+#lightbox img {
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: 10px;
+  box-shadow: 0 0 15px black;
+}
+
+#close {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  color: white;
+  font-size: 35px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
 @media (max-width: 768px) {
   .slider img{
     max-height:50vh;
@@ -233,6 +266,12 @@ for(let i=1;i<=22;i++){
 document.write(`<img src="foto${i}.jpg" onclick="show(${i-1})">`)
 }
 </script>
+</div>
+
+<!-- Lightbox modal -->
+<div id="lightbox">
+  <span id="close">&times;</span>
+  <img id="lightbox-img" src="">
 </div>
 
 <div class="info">
@@ -350,6 +389,25 @@ zobraz()
 function show(i){
 index=i
 zobraz()
+}
+
+// Lightbox
+const lightbox = document.getElementById("lightbox");
+const lightboxImg = document.getElementById("lightbox-img");
+const closeBtn = document.getElementById("close");
+
+slider.onclick = function() {
+  lightbox.style.display = "flex";
+  lightboxImg.src = slider.src;
+}
+
+closeBtn.onclick = function() {
+  lightbox.style.display = "none";
+}
+
+// Klik mimo obrázka zatvorí modal
+lightbox.onclick = function(e) {
+  if(e.target === lightbox) lightbox.style.display = "none";
 }
 </script>
 
