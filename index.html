@@ -4,7 +4,13 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Apartmán La Mata – prenájom</title>
+<title>Apartmán La Mata</title>
+
+<!-- Open Graph meta pre zdieľanie linku -->
+<meta property="og:title" content="Apartmán La Mata – Cabo Cervera">
+<meta property="og:description" content="2-spálňový prízemný apartmán s balkónom pre 4 osoby, 600 m od pieskovej pláže La Mata. Bazén, WiFi, parkovanie.">
+<meta property="og:image" content="foto1.jpg">
+<meta property="og:type" content="website">
 
 <style>
 body{
@@ -29,7 +35,6 @@ header{
   padding:20px;
 }
 
-/* TITULNÁ FOTKA */
 .cover {
   position: relative;
   text-align: center;
@@ -59,7 +64,6 @@ header{
   text-align:center;
 }
 
-/* GALÉRIA */
 .slider{
   position:relative;
   text-align:center;
@@ -72,7 +76,7 @@ header{
   border-radius:10px;
   object-fit: contain;
   opacity:1;
-  transition: opacity 0.5s ease-in-out; /* fade efekt */
+  transition: opacity 0.5s ease-in-out;
 }
 
 .arrow{
@@ -160,7 +164,6 @@ footer{
   margin-top:30px;
 }
 
-/* RESPONSÍVNE ÚPRAVY */
 @media (max-width: 768px) {
   .cover-text{
     font-size: 20px;
@@ -196,16 +199,14 @@ Apartmán La Mata – Cabo Cervera
 
 <div class="container">
 
-<!-- TITULNÁ FOTKA -->
 <div class="cover">
 <img src="foto1.jpg" alt="Apartmán La Mata">
 <div class="cover-text">
 Apartmán La Mata – Cabo Cervera<br>
-600 m od pieskovej pláže • Bazén • Balkón • 4 osoby
+60 m² • 600 m od pieskovej pláže • Bazén • Balkón • 4 osoby
 </div>
 </div>
 
-<!-- GALÉRIA -->
 <div class="slider">
 <button class="arrow left" onclick="minus()">❮</button>
 <img id="foto" src="foto5.jpg">
@@ -215,20 +216,20 @@ Apartmán La Mata – Cabo Cervera<br>
 <div class="thumbs">
 <script>
 for(let i=1;i<=22;i++){
-  document.write(`<img src="foto${i}.jpg" onclick="show(${i-1})">`)
+document.write(`<img src="foto${i}.jpg" onclick="show(${i-1})">`)
 }
 </script>
 </div>
 
-<!-- INFO -->
 <div class="info">
-<b>2-spálňový prízemný apartmán pre 4 osoby</b>
 
-<p>Apartmán sa nachádza v lokalite <b>La Mata – Cabo Cervera</b>, urbanizácia <b>Los Leandros Fase 1, blok 4</b>.</p>
+<b>2-spálňový prízemný apartmán s balkónom pre 4 osoby</b>
+
+<p>Apartmán sa nachádza v obľúbenej časti La Mata – Cabo Cervera v urbanizácií Los Leandros pri meste Torrevieja v Španielsku.</p>
 
 <p>Balkón ponúka príjemné posedenie a čiastočný výhľad na more.  
 V areáli sa nachádza bazén.  
-Parkovanie pri apartmáne je bezproblémové.</p>
+Bezproblémové parkovanie pri apartmáne.</p>
 
 <p>K moru je to <b>450 m</b>.  
 Na pieskovú pláž <b>La Mata 600 m</b> (cca 8 minút pešo).  
@@ -240,7 +241,7 @@ Pláž má pozvoľný vstup do mora a je vhodná pre rodiny s deťmi.</p>
 
 <p>K dispozícii je <b>optický internet a internetová televízia</b>, dve klimatizačné jednotky s funkciou kúrenia.</p>
 
-<p>V pešej dostupnosti sú reštaurácie, nákupné centrum, <b>Mercadona</b> a <b>Aldi</b>.</p>
+<p>V pešej dostupnosti sú reštaurácie, kaviarne, nákupné centrum, <b>Mercadona</b> a <b>Aldi</b>.</p>
 
 <p>Letisko Alicante je vzdialené <b>40 km (38 minút autom)</b>.</p>
 
@@ -253,20 +254,32 @@ Pláž má pozvoľný vstup do mora a je vhodná pre rodiny s deťmi.</p>
 <li>September – Október: 80 € / noc</li>
 </ul>
 
+Cena je za noc za celý apartmán.
+
+<br><br>
+
 Minimálny prenájom: <b>12 nocí</b>.
 
 <br><br>
 
-Dlhodobý prenájom: <b>700 € / mesiac + elektrina a voda</b>
+Dlhodobý prenájom (september – máj):  
+<b>700 € / mesiac + elektrina a voda</b>
 </div>
 
 <div class="contact">
-<a class="button email" href="mailto:peter.petrovsky699@gmail.com">Email rezervácia</a>
 
-<a class="button whatsapp" href="https://wa.me/421907221384?text=Dobrý%20deň,%20mám%20záujem%20o%20prenájom%20apartmánu%20La%20Mata">WhatsApp rezervácia</a>
+<a class="button email" href="mailto:peter.petrovsky699@gmail.com">
+Email rezervácia
+</a>
+
+<a class="button whatsapp" href="https://wa.me/421907221384?text=Dobrý%20deň,%20mám%20záujem%20o%20prenájom%20apartmánu%20La%20Mata">
+WhatsApp rezervácia
+</a>
+
 </div>
 
 <div class="map">
+
 <h3>Poloha apartmánu</h3>
 
 <iframe
@@ -280,7 +293,8 @@ src="https://maps.google.com/maps?q=38.00377232820643,-0.6534666588060377&z=17&o
 
 <br><br>
 
-<a class="button whatsapp" href="https://www.google.com/maps/dir/?api=1&destination=38.00377232820643,-0.6534666588060377">
+<a class="button whatsapp"
+href="https://www.google.com/maps/dir/?api=1&destination=38.00377232820643,-0.6534666588060377">
 Navigovať k apartmánu
 </a>
 
@@ -289,39 +303,39 @@ Navigovať k apartmánu
 </div>
 
 <footer>
-Apartmán La Mata – prenájom
+Apartmán La Mata
 </footer>
 
 <script>
-let fotky = []
-for(let i=1;i<=22;i++){ fotky.push(`foto${i}.jpg`) } // všetky fotky sú v galérii
+let fotky=[]
+for(let i=1;i<=22;i++){ fotky.push(`foto${i}.jpg`) }
 
-let index = 4 // počiatočne zobrazí foto5.jpg
-let slider = document.getElementById("foto")
+let index=4
+let slider=document.getElementById("foto")
 
 function zobraz(){
-  slider.style.opacity = 0; // fade out
-  setTimeout(()=> {
-    slider.src = fotky[index];
-    slider.style.opacity = 1; // fade in
-  }, 200);
+slider.style.opacity=0
+setTimeout(()=>{
+slider.src=fotky[index]
+slider.style.opacity=1
+},200)
 }
 
 function plus(){
-  index++
-  if(index >= fotky.length){ index = 0 }
-  zobraz()
+index++
+if(index>=fotky.length){index=0}
+zobraz()
 }
 
 function minus(){
-  index--
-  if(index < 0){ index = fotky.length-1 }
-  zobraz()
+index--
+if(index<0){index=fotky.length-1}
+zobraz()
 }
 
 function show(i){
-  index = i
-  zobraz()
+index=i
+zobraz()
 }
 </script>
 
