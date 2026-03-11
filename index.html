@@ -46,11 +46,11 @@ header{
 
 .cover img {
   width:100%;
-  height:auto;
-  max-height:500px;
-  object-fit:cover;
+  height:400px;      /* orezaná výška fotky */
+  object-fit:cover;  /* oreže prebytočné časti, zachová šírku */
   border-radius:10px;
 }
+
 .cover-text {
   position: absolute;
   top: 50%;
@@ -145,6 +145,23 @@ header{
   box-sizing:border-box;
 }
 
+.price ul{
+  list-style:none;
+  padding:0;
+  font-size:1.1em;
+  line-height:2;
+  color:#000;
+}
+
+.price ul li{
+  margin-bottom:8px;
+}
+
+.price ul li span{
+  display:inline-block;
+  width:160px; /* mesiace na ľavej strane */
+}
+
 .contact{
   margin-top:30px;
   text-align:center;
@@ -237,6 +254,22 @@ footer{
   .contact{
     gap:10px;
   }
+  .price ul li span{
+    width:120px; /* menšia šírka pre mobil */
+  }
+}
+
+.apartment-pricing {
+  display: block;
+  width: 100%;
+  margin-top: 25px;
+}
+
+.apartment-photo,
+.price,
+.apartment-map {
+  width: 100%;
+  margin-bottom: 25px;
 }
 </style>
 </head>
@@ -263,17 +296,14 @@ Apartmán La Mata – Cabo Cervera<br>
 <button class="arrow right" onclick="plus()">❯</button>
 </div>
 
-<div class="thumbs">
-</div>
+<div class="thumbs"></div>
 
-<!-- Lightbox modal -->
 <div id="lightbox">
   <span id="close">&times;</span>
   <img id="lightbox-img" src="">
 </div>
 
 <div class="info">
-
 <b>2-spálňový prízemný apartmán s balkónom pre 4 osoby</b>
 
 <p>Apartmán sa nachádza v obľúbenej časti La Mata – Cabo Cervera v urbanizácií Los Leandros pri meste Torrevieja v Španielsku.</p>
@@ -295,85 +325,40 @@ Pláž má pozvoľný vstup do mora a je vhodná pre rodiny s deťmi.</p>
 <p>V pešej dostupnosti sú reštaurácie, kaviarne, nákupné centrum, <b>Mercadona</b> a <b>Aldi</b>.</p>
 
 <p>Letisko Alicante je vzdialené <b>40 km (38 minút autom)</b>.</p>
-
-<style>
-.apartment-pricing {
-  display: block;
-  width: 100%;
-  margin-top: 25px;
-}
-
-.apartment-photo,
-.price,
-.apartment-map {
-  width: 100%;
-  margin-bottom: 25px;
-}
-</style>
+</div>
 
 <section class="apartment-pricing">
+
   <div class="apartment-photo">
-    <img src="https://peterpetrovsky699-a11y.github.io/apartman---Lamata/og-image.jpg" alt="Apartmán La Mata" style="width:100%; height:auto; border-radius:10px; box-shadow:0 4px 10px rgba(0,0,0,0.2);">
+    <img src="https://peterpetrovsky699-a11y.github.io/apartman---Lamata/og-image.jpg" alt="Apartmán La Mata">
   </div>
 
-<div class="price" style="background:#f9f9f9; padding:20px; border-radius:10px; box-shadow:0 2px 6px rgba(0,0,0,0.1);">
-
-<h2 style="text-align:center; margin-bottom:20px;">Cenník</h2>
-
-<ul style="list-style:none; padding:0; font-size:1.1em; line-height:2; color:#000;">
-
-<li style="display:flex; justify-content:space-between;">
-<span>November – Február</span>
-<strong>50 € / noc</strong>
-</li>
-
-<li style="display:flex; justify-content:space-between;">
-<span>Marec – Máj</span>
-<strong>80 € / noc</strong>
-</li>
-
-<li style="display:flex; justify-content:space-between;">
-<span>Jún – August</span>
-<strong>100 € / noc</strong>
-</li>
-
-<li style="display:flex; justify-content:space-between;">
-<span>September – Október</span>
-<strong>80 € / noc</strong>
-</li>
-
-<li style="margin-top:15px;">Cena je za noc za celý apartmán</li>
-
-<li>Minimálny prenájom: <strong>12 nocí</strong></li>
-
-<li>Dlhodobý prenájom (september – máj):  
-<strong>700 € / mesiac + elektrina a voda</strong></li>
-
-</ul>
-
-</div>
+  <div class="price">
+    <h2 style="text-align:center; margin-bottom:20px;">Cenník</h2>
+    <ul>
+      <li><span>November – Február</span><strong>50 € / noc</strong></li>
+      <li><span>Marec – Máj</span><strong>80 € / noc</strong></li>
+      <li><span>Jún – August</span><strong>100 € / noc</strong></li>
+      <li><span>September – Október</span><strong>80 € / noc</strong></li>
+      <li style="margin-top:15px;">Cena je za noc za celý apartmán</li>
+      <li>Minimálny prenájom: <strong>12 nocí</strong></li>
+      <li>Dlhodobý prenájom (september – máj): <strong>700 € / mesiac + elektrina a voda</strong></li>
+    </ul>
+  </div>
 
   <div class="apartment-map">
     <!-- iframe Google Maps -->
   </div>
+
 </section>
 
 <div class="contact">
-
-<a class="button email" href="mailto:peter.petrovsky699@gmail.com">
-Email rezervácia
-</a>
-
-<a class="button whatsapp" href="https://wa.me/421907221384?text=Dobrý%20deň,%20mám%20záujem%20o%20prenájom%20apartmánu%20La%20Mata">
-WhatsApp rezervácia
-</a>
-
+<a class="button email" href="mailto:peter.petrovsky699@gmail.com">Email rezervácia</a>
+<a class="button whatsapp" href="https://wa.me/421907221384?text=Dobrý%20deň,%20mám%20záujem%20o%20prenájom%20apartmánu%20La%20Mata">WhatsApp rezervácia</a>
 </div>
 
 <div class="map">
-
 <h3>Poloha apartmánu</h3>
-
 <iframe
 width="100%"
 height="400"
@@ -385,8 +370,7 @@ src="https://maps.google.com/maps?q=38.00377232820643,-0.6534666588060377&z=17&o
 
 <br><br>
 
-<a class="button whatsapp"
-href="https://www.google.com/maps/dir/?api=1&destination=38.00377232820643,-0.6534666588060377">
+<a class="button whatsapp" href="https://www.google.com/maps/dir/?api=1&destination=38.00377232820643,-0.6534666588060377">
 Navigovať k apartmánu
 </a>
 
@@ -406,7 +390,6 @@ let index=4
 let slider=document.getElementById("foto")
 const thumbsContainer = document.querySelector('.thumbs')
 
-// Slider funkcia
 function zobraz(){
   slider.style.opacity=0
   setTimeout(()=>{
@@ -427,7 +410,6 @@ if(index<0){index=fotky.length-1}
 zobraz()
 }
 
-// Dynamicky vytvorenie miniatur
 for(let i=1;i<=22;i++){
   const thumb = document.createElement('img');
   thumb.src = `foto${i}.jpg`;
@@ -443,7 +425,6 @@ for(let i=1;i<=22;i++){
   thumbsContainer.appendChild(thumb);
 }
 
-// Lightbox
 const lightbox = document.getElementById("lightbox");
 const lightboxImg = document.getElementById("lightbox-img");
 const closeBtn = document.getElementById("close");
@@ -464,18 +445,3 @@ lightbox.onclick = function(e) {
 
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
