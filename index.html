@@ -6,7 +6,6 @@
 
 <title>Apartmán La Mata</title>
 
-<!-- Open Graph pre WhatsApp/Facebook -->
 <meta property="og:title" content="Apartmán La Mata – Cabo Cervera">
 <meta property="og:description" content=" Bazén, WiFi, parkovanie. 2-spálňový prízemný apartmán s balkónom pre 4 osoby, 450m od mora. ">
 <meta property="og:image" content="https://peterpetrovsky699-a11y.github.io/apartman---Lamata/og-image.jpg">
@@ -240,7 +239,7 @@ footer{
   }
 }
 
-/* Fotka nad cennikom a cennik na celu sirku */
+/* Fotka nad cennikom a tabuľkový cenník */
 .apartment-pricing {
   display: block;
   width: 100%;
@@ -253,10 +252,33 @@ footer{
   width: 100%;
   margin-bottom: 25px;
 }
-.price ul li {
-  display:flex;
-  justify-content:flex-start;
-  gap:15px;
+
+.price table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 1.1em;
+}
+
+.price table th, .price table td {
+  padding: 10px 15px;
+  border-bottom: 1px solid #ddd;
+}
+
+.price table th {
+  text-align:left;
+}
+
+.price table td.price-cell {
+  background:#e0f3f8;
+  text-align:right;
+  font-weight:bold;
+  min-width:120px;
+}
+
+@media (max-width:768px){
+  .price table td.price-cell {
+    text-align:right;
+  }
 }
 </style>
 </head>
@@ -303,7 +325,6 @@ Apartmán La Mata – Cabo Cervera<br>
 <p>Letisko Alicante je vzdialené <b>40 km (38 minút autom)</b>.</p>
 </div>
 
-<!-- Fotka nad cennikom a cennik -->
 <section class="apartment-pricing">
   <div class="apartment-photo">
     <img src="https://peterpetrovsky699-a11y.github.io/apartman---Lamata/og-image.jpg" alt="Apartmán La Mata" style="width:100%; height:250px; object-fit:cover; border-radius:10px; box-shadow:0 4px 10px rgba(0,0,0,0.2);">
@@ -311,18 +332,17 @@ Apartmán La Mata – Cabo Cervera<br>
 
   <div class="price">
     <h2 style="text-align:center; margin-bottom:20px;">Cenník</h2>
-    <ul style="list-style:none; padding:0; font-size:1.1em; line-height:2; color:#000;">
-      <li><span>November – Február</span><strong>50 € / noc</strong></li>
-      <li><span>Marec – Máj</span><strong>80 € / noc</strong></li>
-      <li><span>Jún – August</span><strong>100 € / noc</strong></li>
-      <li><span>September – Október</span><strong>80 € / noc</strong></li>
-      <li style="margin-top:15px;">Cena je za noc za celý apartmán</li>
-      <li>Minimálny prenájom: <strong>12 nocí</strong></li>
-      <li>Dlhodobý prenájom (september – máj): <strong>700 € / mesiac + elektrina a voda</strong></li>
-    </ul>
+    <table>
+      <tr><th>Obdobie</th><td class="price-cell">Cena / noc</td></tr>
+      <tr><td>November – Február</td><td class="price-cell">50 €</td></tr>
+      <tr><td>Marec – Máj</td><td class="price-cell">80 €</td></tr>
+      <tr><td>Jún – August</td><td class="price-cell">100 €</td></tr>
+      <tr><td>September – Október</td><td class="price-cell">80 €</td></tr>
+      <tr><td colspan="2" style="padding-top:10px;">Cena je za noc za celý apartmán</td></tr>
+      <tr><td colspan="2">Minimálny prenájom: <strong>12 nocí</strong></td></tr>
+      <tr><td colspan="2">Dlhodobý prenájom (september – máj): <strong>700 € / mesiac + elektrina a voda</strong></td></tr>
+    </table>
   </div>
-
-  <div class="apartment-map"></div>
 </section>
 
 <div class="contact">
