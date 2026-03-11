@@ -6,8 +6,9 @@
 
 <title>Apartmán La Mata</title>
 
+<!-- Open Graph pre WhatsApp/Facebook -->
 <meta property="og:title" content="Apartmán La Mata – Cabo Cervera">
-<meta property="og:description" content=" Bazén, WiFi, parkovanie. 2-spálňový prízemný apartmán s balkónom pre 4 osoby, 450m od mora. ">
+<meta property="og:description" content="Bazén, WiFi, parkovanie. 2-spálňový prízemný apartmán s balkónom pre 4 osoby, 450m od mora.">
 <meta property="og:image" content="https://peterpetrovsky699-a11y.github.io/apartman---Lamata/og-image.jpg">
 <meta property="og:url" content="https://peterpetrovsky699-a11y.github.io/apartman---Lamata/">
 <meta property="og:type" content="website">
@@ -45,7 +46,6 @@ header{
 
 .cover img {
   width:100%;
-  height:auto;
   max-height:500px;
   object-fit:cover;
   border-radius:10px;
@@ -145,6 +145,23 @@ header{
   box-sizing:border-box;
 }
 
+.price ul {
+  list-style:none;
+  padding:0;
+  font-size:1.1em;
+  line-height:1.7;
+  color:#000;
+}
+
+.price li {
+  margin-bottom:10px;
+}
+
+.price li span {
+  display:inline-block;
+  width:180px; /* pevná šírka pre mesiace */
+}
+
 .contact{
   margin-top:30px;
   text-align:center;
@@ -215,71 +232,36 @@ footer{
   cursor: pointer;
 }
 
-@media (max-width: 768px) {
-  .slider img{
-    max-height:50vh;
-  }
-  .thumbs img{
-    width:60px;
-    height:60px;
-  }
-  .arrow{
-    font-size:28px;
-    padding:6px 10px;
-  }
-  .info{
-    font-size:15px;
-  }
-  .button{
-    font-size:15px;
-    padding:10px 18px;
-  }
-  .contact{
-    gap:10px;
+/* Fotka nad cennikom */
+.apartment-photo img {
+  width:100%;
+  height:250px;  /* mobile a default */
+  object-fit:cover;
+  border-radius:10px;
+  box-shadow:0 4px 10px rgba(0,0,0,0.2);
+}
+
+/* Desktop – fotka trocha vyššia */
+@media (min-width: 769px) {
+  .apartment-photo img {
+    height:320px; /* mierne vyššia na desktop */
   }
 }
 
-/* Fotka nad cennikom a tabuľkový cenník */
+/* Cenník a mapa pod sebou */
 .apartment-pricing {
-  display: block;
-  width: 100%;
-  margin-top: 25px;
+  display:block;
+  width:100%;
+  margin-top:25px;
 }
 
 .apartment-photo,
 .price,
 .apartment-map {
-  width: 100%;
-  margin-bottom: 25px;
+  width:100%;
+  margin-bottom:25px;
 }
 
-.price table {
-  width: 100%;
-  border-collapse: collapse;
-  font-size: 1.1em;
-}
-
-.price table th, .price table td {
-  padding: 10px 15px;
-  border-bottom: 1px solid #ddd;
-}
-
-.price table th {
-  text-align:left;
-}
-
-.price table td.price-cell {
-  background:#e0f3f8;
-  text-align:right;
-  font-weight:bold;
-  min-width:120px;
-}
-
-@media (max-width:768px){
-  .price table td.price-cell {
-    text-align:right;
-  }
-}
 </style>
 </head>
 
@@ -307,56 +289,66 @@ Apartmán La Mata – Cabo Cervera<br>
 
 <div class="thumbs"></div>
 
-<!-- Lightbox modal -->
 <div id="lightbox">
   <span id="close">&times;</span>
   <img id="lightbox-img" src="">
 </div>
 
 <div class="info">
+
 <b>2-spálňový prízemný apartmán s balkónom pre 4 osoby</b>
+
 <p>Apartmán sa nachádza v obľúbenej časti La Mata – Cabo Cervera v urbanizácií Los Leandros pri meste Torrevieja v Španielsku.</p>
-<p>Balkón ponúka príjemné posedenie a čiastočný výhľad na more. V areáli sa nachádza bazén. Bezproblémové parkovanie pri apartmáne.</p>
-<p>K moru je to <b>450 m</b>. Na pieskovú pláž <b>La Mata 600 m</b> (cca 8 minút pešo). Pláž má pozvoľný vstup do mora a je vhodná pre rodiny s deťmi.</p>
+<p>Balkón ponúka príjemné posedenie a čiastočný výhľad na more.  
+V areáli sa nachádza bazén.  
+Bezproblémové parkovanie pri apartmáne.</p>
+<p>K moru je to <b>450 m</b>. Na pieskovú pláž <b>La Mata 600 m</b> (cca 8 minút pešo).  
+Pláž má pozvoľný vstup do mora a je vhodná pre rodiny s deťmi.</p>
 <p>V okolí sa nachádza park <b>Torre del Moro</b> a <b>Parque del Molino de Agua</b> ideálne na prechádzky a relax.</p>
 <p>Apartmán je plne vybavený: chladnička, práčka, rúra, mikrovlnka, varná konvica, toustovač, vysávač, televízor, sporák, fén, rádio a plne zariadená kuchyňa. V izbách sú vstavané šatníky.</p>
 <p>K dispozícii je <b>optický internet a internetová televízia</b>, dve klimatizačné jednotky s funkciou kúrenia (zimné mesiace).</p>
 <p>V pešej dostupnosti sú reštaurácie, kaviarne, nákupné centrum, <b>Mercadona</b> a <b>Aldi</b>.</p>
 <p>Letisko Alicante je vzdialené <b>40 km (38 minút autom)</b>.</p>
+
 </div>
 
 <section class="apartment-pricing">
+
   <div class="apartment-photo">
-    <img src="https://peterpetrovsky699-a11y.github.io/apartman---Lamata/og-image.jpg" alt="Apartmán La Mata" style="width:100%; height:250px; object-fit:cover; border-radius:10px; box-shadow:0 4px 10px rgba(0,0,0,0.2);">
+    <img src="https://peterpetrovsky699-a11y.github.io/apartman---Lamata/og-image.jpg" alt="Apartmán La Mata">
   </div>
 
   <div class="price">
     <h2 style="text-align:center; margin-bottom:20px;">Cenník</h2>
-    <table>
-      <tr><th>Obdobie</th><td class="price-cell">Cena / noc</td></tr>
-      <tr><td>November – Február</td><td class="price-cell">50 €</td></tr>
-      <tr><td>Marec – Máj</td><td class="price-cell">80 €</td></tr>
-      <tr><td>Jún – August</td><td class="price-cell">100 €</td></tr>
-      <tr><td>September – Október</td><td class="price-cell">80 €</td></tr>
-      <tr><td colspan="2" style="padding-top:10px;">Cena je za noc za celý apartmán</td></tr>
-      <tr><td colspan="2">Minimálny prenájom: <strong>12 nocí</strong></td></tr>
-      <tr><td colspan="2">Dlhodobý prenájom (september – máj): <strong>700 € / mesiac + elektrina a voda</strong></td></tr>
-    </table>
+    <ul>
+      <li><span>November – Február</span><strong>50 € / noc</strong></li>
+      <li><span>Marec – Máj</span><strong>80 € / noc</strong></li>
+      <li><span>Jún – August</span><strong>100 € / noc</strong></li>
+      <li><span>September – Október</span><strong>80 € / noc</strong></li>
+      <li style="margin-top:15px;">Cena je za noc za celý apartmán</li>
+      <li>Minimálny prenájom: <strong>12 nocí</strong></li>
+      <li>Dlhodobý prenájom (september – máj): <strong>700 € / mesiac + elektrina a voda</strong></li>
+    </ul>
   </div>
+
+  <div class="apartment-map">
+    <iframe
+      width="100%"
+      height="400"
+      style="border:0"
+      loading="lazy"
+      allowfullscreen
+      src="https://maps.google.com/maps?q=38.00377232820643,-0.6534666588060377&z=17&output=embed">
+    </iframe>
+    <br><br>
+    <a class="button whatsapp" href="https://www.google.com/maps/dir/?api=1&destination=38.00377232820643,-0.6534666588060377">Navigovať k apartmánu</a>
+  </div>
+
 </section>
 
 <div class="contact">
-  <a class="button email" href="mailto:peter.petrovsky699@gmail.com">Email rezervácia</a>
-  <a class="button whatsapp" href="https://wa.me/421907221384?text=Dobrý%20deň,%20mám%20záujem%20o%20prenájom%20apartmánu%20La%20Mata">WhatsApp rezervácia</a>
-</div>
-
-<div class="map">
-  <h3>Poloha apartmánu</h3>
-  <iframe width="100%" height="400" style="border:0" loading="lazy" allowfullscreen src="https://maps.google.com/maps?q=38.00377232820643,-0.6534666588060377&z=17&output=embed"></iframe>
-  <br><br>
-  <a class="button whatsapp" href="https://www.google.com/maps/dir/?api=1&destination=38.00377232820643,-0.6534666588060377">Navigovať k apartmánu</a>
-</div>
-
+<a class="button email" href="mailto:peter.petrovsky699@gmail.com">Email rezervácia</a>
+<a class="button whatsapp" href="https://wa.me/421907221384?text=Dobrý%20deň,%20mám%20záujem%20o%20prenájom%20apartmánu%20La%20Mata">WhatsApp rezervácia</a>
 </div>
 
 <footer>
@@ -379,8 +371,17 @@ function zobraz(){
   },200)
 }
 
-function plus(){ index++; if(index>=fotky.length) index=0; zobraz() }
-function minus(){ index--; if(index<0) index=fotky.length-1; zobraz() }
+function plus(){
+index++
+if(index>=fotky.length){index=0}
+zobraz()
+}
+
+function minus(){
+index--
+if(index<0){index=fotky.length-1}
+zobraz()
+}
 
 for(let i=1;i<=22;i++){
   const thumb = document.createElement('img');
@@ -389,7 +390,10 @@ for(let i=1;i<=22;i++){
   thumb.onclick = function(){
     index = i-1;
     zobraz();
-    setTimeout(()=>{ lightbox.style.display = "flex"; lightboxImg.src = fotky[index]; },210);
+    setTimeout(()=>{
+      lightbox.style.display = "flex";
+      lightboxImg.src = fotky[index];
+    },210);
   };
   thumbsContainer.appendChild(thumb);
 }
@@ -398,9 +402,18 @@ const lightbox = document.getElementById("lightbox");
 const lightboxImg = document.getElementById("lightbox-img");
 const closeBtn = document.getElementById("close");
 
-slider.onclick = function() { lightbox.style.display = "flex"; lightboxImg.src = slider.src; }
-closeBtn.onclick = function() { lightbox.style.display = "none"; }
-lightbox.onclick = function(e) { if(e.target===lightbox) lightbox.style.display = "none"; }
+slider.onclick = function() {
+  lightbox.style.display = "flex";
+  lightboxImg.src = slider.src;
+}
+
+closeBtn.onclick = function() {
+  lightbox.style.display = "none";
+}
+
+lightbox.onclick = function(e) {
+  if(e.target === lightbox) lightbox.style.display = "none";
+}
 </script>
 
 </body>
